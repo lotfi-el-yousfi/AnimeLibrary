@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mysql:
+    build: .
+    container_name: anime_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=anime_library
+      - MYSQL_USER=anime_user
+      - MYSQL_PASSWORD=anime_password
+    ports:
+      - "3306:3306"
+    networks:
+      - anime_network
+
+networks:
+  anime_network:
+    driver: bridge
