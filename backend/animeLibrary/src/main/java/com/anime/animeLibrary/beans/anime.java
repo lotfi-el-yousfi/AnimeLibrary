@@ -1,28 +1,45 @@
 package com.anime.animeLibrary.beans;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+@Entity
+@Table(name = "your_entity_table")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class anime {
 
-    String title;
-    String url;
-    String imageUrl;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", updatable = false, nullable = false)
+    private long id;
 
-    static List<anime> animeList = new ArrayList<>();
+    @Column(name = "title")
+    private String title;
 
-    public static List<anime> getAnimeList() {
-        return animeList;
+    @Column(name = "url")
+    private String url;
+
+    @Column(name = "imageUrl")
+    private String imageUrl;
+
+    @Getter
+    private static List<anime> animeList = new ArrayList<>();
+
+    public anime(String title, String url, String imageUrl) {
+        this.title = title;
+        this.url = url;
+        this.imageUrl = imageUrl;
     }
 
-    public static void setAnimeList(anime a) {
-        animeList.add(a);
+    public static void addAnime(anime anime) {
+        animeList.add(anime);
     }
 }

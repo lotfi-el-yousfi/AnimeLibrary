@@ -6,13 +6,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.anime.animeLibrary.beans.anime;
 
+import java.util.Arrays;
+
 @Controller
 public class AnimeController {
 
     @GetMapping("/anime-list")
     public String index(Model model) {
         model.addAttribute(
-            "animeList", anime.getAnimeList());
+                "animeList",
+                anime.getAnimeList ());
         return "index";
     }
 }
