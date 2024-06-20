@@ -23,6 +23,9 @@
 <div class="container">
     <div style="text-align: center;">
         <h1 class="mt-5 mb-4">Anime List</h1>
+        <span style="font-size:15px"
+              th:text="${#lists.size(animeList)}"> </span>
+
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
         <!-- Iterate over animeList and create responsive cards -->
