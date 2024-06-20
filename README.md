@@ -1,3 +1,5 @@
+# lien discord valable pour 7 jour a partir de  20 juin 2024
+### https://discord.gg/f8wVAb2A
 # Anime Library Full Stack Project
 
 ## Table of Contents
