@@ -34,39 +34,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/anime-list">All Animes</a>
                     </li>
-                    <li class="nav-item mx-3">
-                        <form class="d-flex"
-                              action="/anime-list/title/"
-                              method="get"
-                              onsubmit="this.action += encodeURIComponent(this.title.value);">
-                            <input class="form-control me-2" type="search"
-                                   placeholder="Search by Title" aria-label="Search"
-                                   id="title"
-                            >
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </li>
-                    <li class="nav-item mx-3">
-                        <form class="d-flex"
-                              action="/anime-list/id/"
-                              method="get"
-                              onsubmit="this.action += encodeURIComponent(this.id.value);">
-                            <input class="form-control me-2" type="search"
-                                   placeholder="Search by Title" aria-label="Search"
-                                   id="id"
-                            >
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div style="text-align: center;">
         <h1 class="mt-5 mb-4">Anime List</h1>
-        <span style="font-size:15px"
-              th:text="${#lists.size(animeList)}"> </span>
-
     </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-6">
         <!-- Iterate over animeList and create responsive cards -->
